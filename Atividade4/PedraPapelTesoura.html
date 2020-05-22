@@ -1,0 +1,87 @@
+<html>
+  <header>
+    <meta charset="utf-8" />
+  </header>
+  <body></body>
+</html>
+
+<script>
+  const jogo = {
+    Pedra: "Pedra",
+    Papel: "Papel",
+    Tesoura: "Tesoura"
+  };
+
+  var escolha;
+  alert("Bem-vindo ao jogo!");
+  alert("Você jogará contra o computador!");
+  alert("Escolha sua jogada entre Pedra, Papel ou Tesoura!");
+
+  escolha = prompt("Escolha: \n1- Pedra\n2- Tesoura\n3 - Papel");
+
+  if (escolha == 1) escolha = "Pedra";
+
+  if (escolha == 2) escolha = "Tesoura";
+
+  if (escolha == 3) escolha = "Papel";
+
+  for (var i = 1; i <= 3; i++) {
+    alert(i);
+  }
+
+  var computador = Math.floor(Math.random() * (3)) + 1;
+  if (computador === 1) computador = "Pedra";
+
+  if (computador === 2) computador = "Tesoura";
+
+  if (computador === 3) computador = "Papel";
+
+  alert(jogo[escolha] + " Vs " + jogo[computador]);
+
+  switch (jogo[escolha]) {
+    case "Pedra":
+      if (jogo[computador] === jogo.Papel) {
+        alert("Computador Ganha!");
+        break;
+      }
+      if (jogo[computador] === jogo.Tesoura) {
+        alert("Jogador Ganha!");
+        break;
+      }
+      if (jogo[computador] === jogo.Papel) {
+        alert("Empate!");
+        break;
+      }
+      break;
+
+    case "Tesoura":
+      if (jogo[computador] === jogo.Papel) {
+        alert("Computador Ganha!");
+        break;
+      }
+      if (jogo[computador] === jogo.Tesoura) {
+        alert("Empate!");
+        break;
+      }
+      if (jogo[computador] === jogo.Papel) {
+        alert("Jogador Ganha!");
+        break;
+      }
+      break;
+
+    case "Papel":
+      if (jogo[computador] === jogo.Papel) {
+        alert("Empate!");
+        break;
+      }
+      if (jogo[computador] === jogo.Tesoura) {
+        alert("Computador Ganha!");
+        break;
+      }
+      if (jogo[computador] === jogo.Papel) {
+        alert("Jogador Ganha!");
+        break;
+      }
+      break;
+  }
+</script>
