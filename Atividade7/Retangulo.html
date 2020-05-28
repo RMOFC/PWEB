@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <input id="base" value="" />
+    <input id="altura" value="" />
+    <button onclick="calcularArea()">Calcular</button>
+
+  <script>
+    function calcularArea() {
+      var x = Number(document.getElementById("base").value);
+      var y = Number(document.getElementById("altura").value);
+
+      var retangulo = new Retangulo(x, y);
+      alert(retangulo.calcularArea());
+    }
+
+    function Retangulo(x, y) {
+      this.base = x;
+      this.altura = y;
+      this.calcularArea = function () {
+        return this.base * this.altura;
+      };
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <script>
+    function Conta() {
+    var nomeCorrentista;
+    var banco;
+    var numeroDaConta;
+    var saldo;
+
+    this.setNomeCorrentista = function (nome) {
+      this.nomeCorrentista = nome;
+    };
+
+    this.setBanco = function (banco) {
+      this.banco = banco;
+    };
+
+    this.setNumeroDaConta = function (numConta) {
+      this.numeroDaConta = numConta;
+    };
+
+    this.setSaldo = function (saldo) {
+      this.saldo = saldo;
+    };
+
+    this.getNomeCorrentista = function () {
+      return this.nomeCorrentista;
+    };
+
+    this.getBanco = function () {
+      return this.banco;
+    };
+
+    this.getNumeroDaConta = function () {
+      return this.numeroDaConta;
+    };
+
+    this.getSaldo = function () {
+      return this.saldo;
+    };
+  }
+
+  function Corrente() {
+    Conta.call(this);
+    var saldoEspecial;
+
+    this.setSaldoEspecial = function (saldoEspecial) {
+      this.saldoEspecial = saldoEspecial;
+    };
+
+    this.getSaldoEspecial = function () {
+      return this.saldoEspecial;
+    };
+  }
+
+  function Poupanca() {
+    Conta.call(this);
+    var juros;
+    var dataVencimento;
+
+    this.setJuros = function (juros) {
+      this.juros = juros;
+    };
+
+    this.setDataVencimento = function (dataVencimento) {
+      this.dataVencimento = dataVencimento;
+    };
+
+    this.getJuros = function () {
+      return this.juros;
+    };
+
+    this.getDataVencimento = function () {
+      return this.dataVencimento;
+    };
+  }
+
+    var conta = new Conta();
+    conta.setBanco("Bradesco");
+    conta.setNomeCorrentista("Fulano");
+    conta.setNumeroDaConta("7245-8");
+    conta.setSaldo("1.000,00");
+    console.group("Objeto Conta", conta);
+
+    var poupanca = new Poupanca();
+    poupanca.setBanco("Bradesco");
+    poupanca.setNomeCorrentista("Fulano");
+    poupanca.setNumeroDaConta("7245-8");
+    poupanca.setSaldo("5.000,00");
+    poupanca.setJuros = "10%";
+    poupanca.setDataVencimento = "05/07/2020";
+    console.group("Objeto Poupança", poupanca);
+
+    var corrente = new Corrente();
+    corrente.setBanco("Bradesco");
+    corrente.setNomeCorrentista("Fulano");
+    corrente.setNumeroDaConta("7245-8");
+    corrente.setSaldo("1.000,00");
+    corrente.setSaldoEspecial = "2.000";
+    console.group("Objeto Corrente", corrente);
+
+  </script>
+</body>
+
+</html>
